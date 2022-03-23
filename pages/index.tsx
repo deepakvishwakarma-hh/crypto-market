@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect } from 'react';
+import Head from 'next/head'
 import Nav from '../templates/Nav';
 import Board from '../templates/Board';
 import Popup from '../templates/Popup';
@@ -25,11 +26,22 @@ const Home = ({ Res }: prop) => {
   }, [])
 
   return (
-    <Box bg={bg} color={color}>
-      < Nav _s />
-      <Board />
-      {popup && <Popup />}
-    </Box >
+    <>
+      <Head>
+        <title>Cryptoinf</title>
+        <meta name="description" content={"Cryptoinf is Crypto Market Analyer"} />
+        <meta name={`og:Cryptoinf`} property={`og:Cryptoinf`} content="Cryptoinf is Crypto Market Analyer" />
+        <meta name="twitter:card" content={`Cryptoinf`} />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      <Box bg={bg} color={color}>
+        < Nav _s />
+        <Board />
+        {popup && <Popup />}
+      </Box >
+    </>
   )
 }
 
