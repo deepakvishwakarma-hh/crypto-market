@@ -40,6 +40,4 @@ export const counterSlice = createSlice({
 
 export const { togglePopup, updateResponse, updatePopupTarget, toggleTheme, updateSearch } = counterSlice.actions
 
-// Other code such as selectors can use the imported `RootState` type
-
 export default counterSlice.reducer
