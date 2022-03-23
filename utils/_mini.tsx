@@ -43,5 +43,4 @@ const ColorManager = (changePercent24Hr: string) => {
     }
 }
 
-
 export default ColorManager
