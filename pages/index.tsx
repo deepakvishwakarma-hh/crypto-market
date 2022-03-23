@@ -28,7 +28,7 @@ const Home = ({ Res }: prop) => {
     <Box bg={bg} color={color}>
       < Nav _s />
       <Board />
-      {popup && <Popup data={Res} />}
+      {popup && <Popup />}
     </Box >
   )
 }
