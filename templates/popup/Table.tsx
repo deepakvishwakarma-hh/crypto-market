@@ -15,9 +15,9 @@ const Tabular = ({ Arr }: prop) => {
     const keys = Object.keys(Arr)
     const Mapper = keys.map((value: any, index: number) => {
         return (
-            <Flex overflow={'scroll'} px={3} py={1} key={index} justifyContent="space-between">
+            <Flex border={['1px grey solid', 'none']} flexWrap={'wrap'} px={3} py={1} key={index} justifyContent="space-between">
                 <Text fontWeight={500} textTransform={'capitalize'}>{value} : </Text>
-                <Text color={'grey'}>{Arr[value]}</Text>
+                <Text wordBreak={['break-all']} color={'grey'} >{Arr[value]}</Text>
             </Flex>
         )
     })

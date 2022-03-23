@@ -6,10 +6,11 @@ import { useRouter } from 'next/router'
 import Indicator from "./Indicator"
 
 type prop = {
-    Arr: Coin
+    Arr: Coin,
+    C?: boolean | undefined
 }
 
-const Head = ({ Arr }: prop) => {
+const Head = ({ Arr, C }: prop) => {
     const router = useRouter()
 
     const dispatch = useAppDispatch()
@@ -25,7 +26,7 @@ const Head = ({ Arr }: prop) => {
     const { name, symbol } = Arr
 
     return (
-        <Flex alignItems={'center'}>
+        <Flex flexWrap={'wrap'} alignItems={'center'}>
             <Heading display={"flex"} flex={1}>
                 <Indicator percent={Arr.changePercent24Hr} />
 
@@ -41,7 +42,7 @@ const Head = ({ Arr }: prop) => {
                         </svg>
                     </Box>
                 </Tooltip>
-                <Tooltip label="close popup">
+                {C && <Tooltip label="close popup">
                     <Box p={3} bg={'none'} onClick={onCancelHandler} my={5}>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
@@ -49,7 +50,7 @@ const Head = ({ Arr }: prop) => {
                         </svg>
 
                     </Box>
-                </Tooltip>
+                </Tooltip>}
 
             </Flex>
         </Flex>

@@ -1,23 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
+import type { Coin } from "../utils/types";
 
-// Define a type for the slice state
 interface CounterState {
     popup: boolean
     popupTarget: string,
     isLight: boolean,
     search: false | string;
+    response: undefined | Coin[],
 }
 
-// Define the initial state using that type
 const initialState: CounterState = {
     popup: false,
     popupTarget: 'bitcoin',
     isLight: true,
-    search: false
+    search: false,
+    response: undefined,
 }
 export const counterSlice = createSlice({
     name: 'counter',
-    // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
         togglePopup: (state, action) => {
@@ -31,12 +31,14 @@ export const counterSlice = createSlice({
         },
         updateSearch: (state, action) => {
             state.search = action.payload
+        },
+        updateResponse: (state, action) => {
+            state.response = action.payload
         }
-
     },
 })
 
-export const { togglePopup, updatePopupTarget, toggleTheme, updateSearch } = counterSlice.actions
+export const { togglePopup, updateResponse, updatePopupTarget, toggleTheme, updateSearch } = counterSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 

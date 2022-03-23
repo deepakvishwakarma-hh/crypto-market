@@ -1,47 +1,46 @@
-import axios from 'axios'
-import Nav from '../templates/Nav'
-import type { NextPage } from 'next'
-import Board from '../templates/Board'
-import { useAppSelector } from '../redux-store/hooks'
-import { Box, useColorModeValue } from '@chakra-ui/react'
-import Popup from '../templates/Popup'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import axios from 'axios';
+import { useEffect } from 'react';
+import Nav from '../templates/Nav';
+import Board from '../templates/Board';
+import Popup from '../templates/Popup';
+import type { Coin } from '../utils/types';
+import { Box, useColorModeValue } from '@chakra-ui/react';
+import { updateResponse } from '../redux-store/reducers';
+import { useAppSelector, useAppDispatch } from '../redux-store/hooks';
 
-const Home: NextPage = ({ API, more }: any) => {
+type prop = {
+  Res: Coin[]
+}
 
-  const router = useRouter();
-  const popup = useAppSelector(store => store.state.popup)
-
-  const bg = useColorModeValue('black', 'white')
-  const color = useColorModeValue('white', 'gray.800')
-
-  const search = useAppSelector(state => state.state.search)
+const Home = ({ Res }: prop) => {
+  const dispatch = useAppDispatch()
+  const bg = useColorModeValue('white', 'black');
+  const color = useColorModeValue('gray.800', 'white');
+  const popup = useAppSelector(store => store.state.popup);
 
   useEffect(() => {
-    document.body.style.background = "black"
+    if (Res) {
+      dispatch(updateResponse(Res));
+    }
   }, [])
 
   return (
-
-    <Box overflow={'scroll'} bg={bg} color={color}>
-      < Nav />
-      <Board data={API} />
-      {popup && <Popup data={API} />}
+    <Box bg={bg} color={color}>
+      < Nav _s />
+      <Board />
+      {popup && <Popup data={Res} />}
     </Box >
   )
 }
 
 export default Home
 
-
-
 // ServerSide Rendering
 export async function getServerSideProps() {
   const data = await axios.get('https://api.coincap.io/v2/assets');
   return {
     props: {
-      API: data.data.data,
+      Res: data.data.data,
     },
   }
 }
