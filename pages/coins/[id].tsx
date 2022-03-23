@@ -20,7 +20,7 @@ const Id = ({ data }: { data: any }) => {
     const Mapper = keys.map((value: any, index: number) => {
         return (
             <Flex flexWrap={'wrap'} px={3} py={3} key={index} justifyContent="space-between">
-                <Text fontWeight={500} textTransform={'capitalize'}>{value} : </Text>
+                <Text fontWeight={800} textTransform={'capitalize'}>{value} : </Text>
                 <Text wordBreak={['break-all']} color={color} >{Response[value]}</Text>
             </Flex>
         )

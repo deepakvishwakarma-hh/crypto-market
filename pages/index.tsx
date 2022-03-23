@@ -9,6 +9,7 @@ import { Box, useColorModeValue } from '@chakra-ui/react';
 import { updateResponse } from '../redux-store/reducers';
 import { useAppSelector, useAppDispatch } from '../redux-store/hooks';
 
+
 type prop = {
   Res: Coin[]
 }
