@@ -4,7 +4,7 @@
 
 <a href="https://cryptoinf.vercel.app">View 🚀</a>
 
-## Project Details 
+## Project Details 🕵️‍♀️
 
 + React Js
 + Next Js
@@ -14,3 +14,9 @@
 
 + Deployed on Vercel 
 
+## Lighthouse Test 🧪
+
+1. **Performance** : 84/100 
+2. **Accessiblity** : 100/100
+3. **Best Practices**: 100/100
+4. **SEO** : 100/100
