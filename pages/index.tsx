@@ -32,7 +32,6 @@ const Home = ({ Res }: prop) => {
         <meta name="description" content={"Cryptoinf is Crypto Market Analyer"} />
         <meta name={`og:Cryptoinf`} property={`og:Cryptoinf`} content="Cryptoinf is Crypto Market Analyer" />
         <meta name="twitter:card" content={`Cryptoinf`} />
-        <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
