@@ -21,7 +21,7 @@ const Nav = ({ _s }: any) => {
                     </Center>
                 </Tooltip>
             </Flex>
-            {_s && <Center flex={3} display={['flex', ' none ']}>
+            {_s && <Center justifyContent={'flex-end'} flex={3} display={['flex', ' none ']}>
                 <Search />
             </Center>}
         </Container>
