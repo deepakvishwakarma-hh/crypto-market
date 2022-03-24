@@ -1,6 +1,7 @@
-# Cryptoinf
+# Cryptoinf 
 
-> cryptoinf fetch data from crypo api and show result. it is simple to use.
+> cryptoinf fetch data from crypo api and show result. it is simple to use. <br/>
+> Live Fetching is Now available
 
 <a href="https://cryptoinf.vercel.app">View 🚀</a>
 
