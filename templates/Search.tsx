@@ -1,17 +1,16 @@
-import { Flex, Input, Box } from "@chakra-ui/react"
-import { useAppDispatch } from "../redux-store/hooks"
 import { updateSearch } from "../redux-store/reducers"
+import { useAppDispatch } from "../redux-store/hooks"
+import { Flex, Input, Box, useColorMode } from "@chakra-ui/react"
 
 const Search = () => {
-
     const dispatch = useAppDispatch()
-
+    const { colorMode, } = useColorMode()
     const onChangeHandler = (e: any) => {
         dispatch(updateSearch(e.target.value as string))
     }
 
     return (
-        <Flex borderRadius={10} pr={5} bg={'blackAlpha.100'} alignItems={'center'}>
+        <Flex borderRadius={10} pr={5} bg={colorMode !== 'dark' ? 'blackAlpha.100' : "whiteAlpha.100"} alignItems={'center'} >
             <Input bg="none" onChange={onChangeHandler} placeholder="ex. bitcoin" _focus={{ border: 'none' }} border={'none'} />
             <Box>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">

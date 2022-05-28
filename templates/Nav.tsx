@@ -7,7 +7,7 @@ const Nav = ({ _s }: any) => {
     return <nav>
         <Container maxW={"container.xl"} >
             <Flex h={100} >
-                <Flex alignItems={'center'} flex={4} fontWeight={800} textTransform={'uppercase'} fontSize={25} letterSpacing={1}>Crypto Market</Flex>
+                <Flex alignItems={'center'} flex={4} fontWeight={800} fontSize={25} letterSpacing={1}>CryptoInf</Flex>
 
                 {_s && <Tooltip label="search ">
                     <Center display={['none', ' flex ']} flex={3}>
